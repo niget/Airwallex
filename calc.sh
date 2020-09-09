@@ -1,0 +1,1 @@
+javac ReversePolishNotationCalculator.java && java ReversePolishNotationCalculator 
