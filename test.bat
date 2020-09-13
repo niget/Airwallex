@@ -1,1 +1,0 @@
-javac CalcTest.java && java CalcTest 

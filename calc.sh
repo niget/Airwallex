@@ -1,1 +1,1 @@
-javac ReversePolishNotationCalculator.java && java ReversePolishNotationCalculator 
+mvn clean package  && java -jar target/Airwallex-1.0-SNAPSHOT.jar
