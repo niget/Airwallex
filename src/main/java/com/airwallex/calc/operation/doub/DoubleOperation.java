@@ -4,7 +4,6 @@ import com.airwallex.calc.Calc;
 import com.airwallex.calc.operation.BaseOperation;
 
 import java.math.BigDecimal;
-import java.util.Stack;
 
 /**
  * 操作接口类

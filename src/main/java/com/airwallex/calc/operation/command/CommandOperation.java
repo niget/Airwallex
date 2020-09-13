@@ -3,9 +3,6 @@ package com.airwallex.calc.operation.command;
 import com.airwallex.calc.Calc;
 import com.airwallex.calc.operation.BaseOperation;
 
-import java.math.BigDecimal;
-import java.util.Stack;
-
 /**
  */
 public abstract class CommandOperation extends BaseOperation {

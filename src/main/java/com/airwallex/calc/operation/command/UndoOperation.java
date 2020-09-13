@@ -1,9 +1,6 @@
 package com.airwallex.calc.operation.command;
 
 import com.airwallex.calc.Calc;
-import com.airwallex.calc.operation.doub.DoubleOperation;
-
-import java.math.BigDecimal;
 
 public class UndoOperation extends CommandOperation {
 

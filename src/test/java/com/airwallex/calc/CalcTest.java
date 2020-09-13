@@ -1,7 +1,8 @@
 package com.airwallex.calc;
 
-import static org.junit.Assert.assertEquals;
 import org.junit.Test;
+
+import static org.junit.Assert.assertEquals;
 
 public class CalcTest {
 

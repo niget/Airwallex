@@ -2,7 +2,10 @@ package com.airwallex.calc.operation;
 
 import com.airwallex.calc.operation.command.ClearOperation;
 import com.airwallex.calc.operation.command.UndoOperation;
-import com.airwallex.calc.operation.doub.*;
+import com.airwallex.calc.operation.doub.AddOperation;
+import com.airwallex.calc.operation.doub.DivideOperation;
+import com.airwallex.calc.operation.doub.MultiplyOperation;
+import com.airwallex.calc.operation.doub.SubOperation;
 import com.airwallex.calc.operation.single.SqrtOperation;
 
 import java.util.Map;

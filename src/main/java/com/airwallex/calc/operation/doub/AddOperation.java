@@ -1,11 +1,8 @@
 package com.airwallex.calc.operation.doub;
 
 import com.airwallex.calc.Calc;
-import com.airwallex.calc.operation.single.SingleOperation;
 
 import java.math.BigDecimal;
-import java.math.MathContext;
-import java.math.RoundingMode;
 
 public class AddOperation extends DoubleOperation {
 

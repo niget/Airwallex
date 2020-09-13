@@ -2,10 +2,8 @@ package com.airwallex.calc.operation.single;
 
 import com.airwallex.calc.Calc;
 import com.airwallex.calc.operation.BaseOperation;
-import com.airwallex.calc.operation.Operation;
 
 import java.math.BigDecimal;
-import java.util.Stack;
 
 /**
  * 单参数操作符

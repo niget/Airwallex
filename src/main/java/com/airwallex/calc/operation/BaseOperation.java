@@ -2,9 +2,6 @@ package com.airwallex.calc.operation;
 
 import com.airwallex.calc.Calc;
 
-import java.math.BigDecimal;
-import java.util.Stack;
-
 /**
  * 操作接口类
  */

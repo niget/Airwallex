@@ -4,7 +4,10 @@ import com.airwallex.calc.operation.Operation;
 import com.airwallex.calc.operation.OperationFactory;
 
 import java.math.BigDecimal;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Stack;
 
 /**
  * rpn计算引擎实现
