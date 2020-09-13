@@ -32,7 +32,10 @@ public class ReversePolishNotationCalculator implements Calc{
         calculate(s);
     }
 
-
+    /**
+     * 计算
+     * @param s
+     */
     public void calculate(String s) {
         ArrayList<String> input = new ArrayList<String>();
         Collections.addAll(input, s.trim().split(" "));
@@ -42,7 +45,7 @@ public class ReversePolishNotationCalculator implements Calc{
         for(int i = startIndex; i < input.size(); i++) {
             String n = input.get(i);
 
-            //获取操作符
+            //获取操作
             Operation operation = OperationFactory.getOperation(n);
 
             //暂定不是操作符,就是数据,其他异常则直接跑出
@@ -64,6 +67,17 @@ public class ReversePolishNotationCalculator implements Calc{
         }
 
         printCurStatus();
+    }
+
+
+
+    public BigDecimal getValue(String s) {
+        try {
+            return new BigDecimal(s).setScale(SCALE);
+        } catch (NumberFormatException ex) {
+            System.out.printf("%s not found.", s);
+            throw ex;
+        }
     }
 
     /**
@@ -95,7 +109,9 @@ public class ReversePolishNotationCalculator implements Calc{
         return null;
     }
 
-
+    /**
+     * 当前堆栈状态
+     */
     public String curStatus() {
         StringBuffer buffer = new StringBuffer();
         for(BigDecimal i:operationStack){
@@ -110,37 +126,29 @@ public class ReversePolishNotationCalculator implements Calc{
     public void printCurStatus(){
         System.out.printf("stack: %s \n", curStatus());
     }
-
+    /**
+     * 清除操作,具体实现可以不支持,如不支持,可以直接抛出异常,或空处理
+     */
     public void clear() {
         operationStack.clear();
     }
 
-
-    public BigDecimal getValue(String s) {
-        try {
-            return new BigDecimal(s).setScale(SCALE);
-        } catch (NumberFormatException ex) {
-            System.out.printf("%s not found.", s);
-            throw ex;
-        }
-    }
-
-
+    /**
+     * 入栈
+     * @param item
+     * @return
+     */
     public BigDecimal push(BigDecimal item){
         //做状态保存
         saveUndo(operationStack);
         return operationStack.push(item);
     }
+    /**
+     * 从当前堆栈中出栈一个数据
+     * @return
+     */
     public BigDecimal pop(){
         return operationStack.pop();
-    }
-    public void saveUndo(Stack<BigDecimal> operationStack){
-        //向前腾挪位置,如果满了,就把最旧的记录顶掉
-        for (int i = 0; i <undoStackArr.length-1 ; i++) {
-            undoStackArr[i] = undoStackArr[i+1];
-        }
-        //最新数据放到最后
-        undoStackArr[undoStackArr.length-1] = (Stack) operationStack.clone();
     }
     public void undo(){
         Stack<BigDecimal> last = undoStackArr[undoStackArr.length-1];
@@ -150,7 +158,6 @@ public class ReversePolishNotationCalculator implements Calc{
         }
         operationStack = last;
     }
-
     /**
      * 当前数据堆栈大小
      *
@@ -160,4 +167,16 @@ public class ReversePolishNotationCalculator implements Calc{
     public int stackSize() {
         return operationStack.size();
     }
+
+    private void saveUndo(Stack<BigDecimal> operationStack){
+        //向前腾挪位置,如果满了,就把最旧的记录顶掉
+        for (int i = 0; i <undoStackArr.length-1 ; i++) {
+            undoStackArr[i] = undoStackArr[i+1];
+        }
+        //最新数据放到最后
+        undoStackArr[undoStackArr.length-1] = (Stack) operationStack.clone();
+    }
+
+
+
 }

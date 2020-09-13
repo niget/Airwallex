@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
  */
 public interface Calc {
 
-
+    //基本常量
     int MAX_UNDO = 2;
     int SCALE = 15;
     DecimalFormat DECIMALFORMAT = new DecimalFormat("0.##########");
@@ -31,7 +31,6 @@ public interface Calc {
     BigDecimal result();
 
 
-
     /**
      * 当前堆栈状态
      */
@@ -45,7 +44,6 @@ public interface Calc {
      * 回退操作,具体实现可以不支持,如不支持,可以直接抛出异常,或空处理
      */
     void undo();
-
     /**
      * 当前数据堆栈大小
      * @return
@@ -57,6 +55,12 @@ public interface Calc {
      * @return
      */
     BigDecimal pop();
+
+    /**
+     * 入栈
+     * @param item
+     * @return
+     */
     BigDecimal push(BigDecimal item);
 
 }
